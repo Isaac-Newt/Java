@@ -1,10 +1,12 @@
 /*
  * Isaac List
  * Assignment 1
- * Problem 5
+ * Problem 3
  */
 
-public class PolygonArea {
+package assignment_1;
+
+public class OutputFormat {
 	public static void main(String[] args) {
 		
 	}

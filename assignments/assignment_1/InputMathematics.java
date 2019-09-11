@@ -4,6 +4,8 @@
  * Problem 2
  */
 
+package assignment_1
+
 import java.util.Scanner;
 import java.io.IOException;
 
