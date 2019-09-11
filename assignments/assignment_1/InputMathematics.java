@@ -12,7 +12,7 @@ import java.io.IOException;
 public class InputMathematics {
     public static void main(String[] args) throws IOException {
 
-    	// Initialize the scanner
+        // Initialize the scanner
         Scanner scannerIn = new Scanner(System.in);
 
         // Get the integer inputs from the user
