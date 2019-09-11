@@ -35,7 +35,7 @@ public class CirclePerimeter {
 
         // Get radius from the user
         System.out.print("Enter the radius: ");
-        double radius = scannerInput.nextFloat();
+        double radius = scannerInput.nextDouble();
 
         // Close the scanner
         scannerInput.close();
