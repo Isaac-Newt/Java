@@ -5,8 +5,6 @@
  */
 
 import java.util.Scanner;
- 
-// package assignment_1;
 
 public class CirclePerimeter {
 

@@ -6,8 +6,6 @@
 
 import java.util.Scanner;
 
-// package assignment_1;
-
 public class PolygonArea {
     public static void main(String[] args) {
         
