@@ -1,5 +1,5 @@
 # CS252: Java
----
+
 Course notes and materials
 
 ## Directory Map
