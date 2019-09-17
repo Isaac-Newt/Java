@@ -37,6 +37,22 @@ public class displayNameWhile {
 		}
 		while (answer2.equals("yes"));
 		
+		// While example with two conditions
+		System.out.print("Do you want to display your name? ");
+		String answer = sc.nextLine();
+		int count = 0;
+		
+		while (answer.equals("yes") && count < 3) {
+			count++;
+			
+			System.out.print("Please enter your name: ");
+			String name = sc.nextLine();
+			System.out.println(name);
+			
+			System.out.print("Do you want to display your name? ");
+			answer = sc.nextLine();
+		}
+		
 		sc.close();
 		
 	}
