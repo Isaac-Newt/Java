@@ -5,6 +5,8 @@
  * Demonstrates constructor, as well as class and method syntax.
  */
 
+package box;
+
 class boxObjectExample {
     // A class to create a box object
 

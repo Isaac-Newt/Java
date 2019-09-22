@@ -7,6 +7,8 @@
  * that may be useful with a variety of parameters.
  */
 
+package Overload_method;
+
 public class Overload {
     public static void main(String args[]) {
         OverloadExample example = new OverloadExample();

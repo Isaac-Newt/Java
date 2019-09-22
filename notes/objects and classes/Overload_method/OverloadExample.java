@@ -7,6 +7,8 @@
  * that may be useful with a variety of parameters.
  */
 
+package Overload_method;
+
 public class OverloadExample {
     void overloadExample() {
         System.out.println("No parameters passed");
