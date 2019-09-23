@@ -1,3 +1,4 @@
+// Isaac List - CS252 - September 23, 2019
 // Program to print "Array Leaders", numbers in an array
 // that are larger than all the numbers to the right.
 

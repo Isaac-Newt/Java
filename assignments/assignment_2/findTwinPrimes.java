@@ -1,3 +1,4 @@
+// Isaac List - CS252 - September 23, 2019
 // Program that finds all "twin primes" between 0 and 100
 // Twim primes being primes with a difference of 2.
 

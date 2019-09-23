@@ -1,3 +1,4 @@
+// Isaac List - CS252 - September 23, 2019
 // Program that takes in three ints, and decides whether the ints
 // are entered in an increasing or decreasing order, or no order.
 

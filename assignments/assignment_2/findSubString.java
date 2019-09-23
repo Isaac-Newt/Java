@@ -1,3 +1,4 @@
+// Isaac List - CS252 - September 23, 2019
 // Program to determine if a string contains a given substring
 
 import java.util.Scanner;
