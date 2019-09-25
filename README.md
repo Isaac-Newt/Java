@@ -1,6 +1,6 @@
 # CS252: Java
 
-Course notes and materials
+Course materials, notes, and assignments for CS252: Object-Oriented Programming with Java
 
 ## Directory Map
 
@@ -17,5 +17,6 @@ Course notes and materials
 
 ### Assignments
 
-- assignment_1
-- assignment_2
+- assignment_1 (5 exercises)
+- assignment_2 (5 exercises)
+- assignment_3 (12 exercises)
