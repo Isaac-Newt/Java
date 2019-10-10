@@ -1,29 +1,27 @@
 package question_4_person;
 
 public class Student extends Affiliation implements Person, Interests {
-    // I'm not quite sure what the interfaces are supposed to provide,
-    // I would think methods, since they really shouldn't include data
-    // members? But, I don't know what the methods should do then :\
-
     // Constructor
-    Student(String institute, String address) {
+    Student(String institute, String address, String sport, String title) {
         super(institute, address);
     }
 
     // Implement abstract methods
     @Override
     public void Sports(String sportName) {
-
+        System.out.println("I play " + sportName);
     }
 
     @Override
     public void Profession(String title) {
-
+        System.out.println("I am a " + title);
     }
 
     // Override toString
     @Override
     public String toString() {
+        this.Sports("Tennis");
+        this.Profession("Librarian");
         return ("Student attends " + this.getInstitute() + " and lives at " + this.getAddress());
     }
 }
