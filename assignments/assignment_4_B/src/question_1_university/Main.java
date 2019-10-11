@@ -23,7 +23,7 @@ public class Main {
 		Lana.setOvertimeHours(200);
 		
 		// Create an array of Department Employees
-		DeptEmployee[] department = new DeptEmployee[5];
+		DeptEmployee[] department = {Anne, James, Carol, John, Lana};
 		
 		// Run the view total of salaries function
 		totalSalaries(department);
@@ -43,8 +43,8 @@ public class Main {
 		// Make decision based on answer
 		if (answer.equals("y")) {
 			double totalSalary = 0.0;
-			for (int i = 0; i < 5; i++) {
-				double personSalary = employeeList[i].computeSalary();
+			for (DeptEmployee i:employeeList) {
+				double personSalary = i.computeSalary();
 				totalSalary = totalSalary + personSalary;
 			}
 			
