@@ -1,73 +1,58 @@
 package question_3_employee;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Employee {
 
-	private Account savingsAcct;
-	private Account checkingAcct;
-	private Account retirementAcct;
+    private ArrayList<Account> accounts;
 	private String name;
 	@SuppressWarnings("unused")
 	private LocalDate hireDate;
 	
-	public Employee(String name, int yearOfHire, int monthOfHire, int dayOfHire){
+	public Employee(String name, ArrayList<Account> accounts, int yearOfHire, int monthOfHire, int dayOfHire){
+	    this.accounts = accounts;
 		this.name = name;
 		hireDate = LocalDate.of(yearOfHire, monthOfHire, dayOfHire);
 	}
 
 	
 	public void createNewChecking(double startAmount) {
-		checkingAcct = new Account(this, new AccountType("CHECKING"), startAmount);
+		Account checkingAcct = new CheckingAccount(startAmount);
+		accounts.add(checkingAcct);
 	}
 
 	public void createNewSavings(double startAmount) {
-		savingsAcct = new Account(this, new AccountType("SAVINGS"), startAmount);
+		Account savingsAcct = new SavingsAccount(startAmount);
+		accounts.add(savingsAcct);
 	}
 
 	public void createNewRetirement(double startAmount) {
-		retirementAcct = new Account(this,new AccountType("RETIREMENT"), startAmount);
+		Account retirementAcct = new RetirementAccount(startAmount);
+		accounts.add(retirementAcct);
 		
 	}
 
 	public String getFormattedAcctInfo() {
 		String newline = "\n";
 		String theString = "ACCOUNT INFO FOR "+name+newline+newline;
-		if(checkingAcct != null) theString += checkingAcct.toString()+newline;
-		if(savingsAcct != null) theString += savingsAcct.toString()+ newline;
-		if(retirementAcct != null) theString += retirementAcct.toString()+ newline;
+		for(int i = 0; i < 3; i++) {
+		    theString += accounts.get(i).toString() + newline;
+		}
+		
 		return theString;
 	}
-	public void deposit(AccountType acctType, double amt){
-		switch(acctType.toString()){
-			case "CHECKING":
-				checkingAcct.makeDeposit(amt);
-				break;
-			case "SAVINGS":
-				savingsAcct.makeDeposit(amt);
-				break;
-			case "RETIREMENT":
-				retirementAcct.makeDeposit(amt);
-				break;
-			default:				
-		}
+	
+	public void deposit(int acctIdx, double amt){
+	    // Identify the selected account
+	    Account selected = this.accounts.get(acctIdx);
+	    selected.makeDeposit(amt);
 	}
-	public boolean withdraw(AccountType acctType, double amt){
-		switch(acctType.toString()){
-		case "CHECKING":
-			return checkingAcct.makeWithdrawal(amt);
-			
-		case "SAVINGS":
-			return savingsAcct.makeWithdrawal(amt);
-			
-		case "RETIREMENT":
-			return retirementAcct.makeWithdrawal(amt);
-			
-		default:
-			return false;
-		
-			
-		}
+	
+	public boolean withdraw(int acctIdx, double amt){
+        // Identify the selected account
+        Account selected = this.accounts.get(acctIdx);
+        return selected.makeWithdrawal(amt);
 	}
 
 }

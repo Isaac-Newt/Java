@@ -1,5 +1,6 @@
 package question_3_employee;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -10,10 +11,11 @@ public class Main {
 	}
 	Main(){
 		emps = new Employee[3];
-		emps[0] = new Employee("Jim Daley", 2000, 9, 4);
-		emps[1] = new Employee("Bob Reuben", 1998, 1, 5);
-		emps[2] = new Employee("Susan Randolph", 1997, 2,13);
-		
+		ArrayList<Account> acc = new ArrayList<Account>();
+		emps[0] = new Employee("Jim Daley", acc, 2000, 9, 4);
+		emps[1] = new Employee("Bob Reuben", acc, 1998, 1, 5);
+		emps[2] = new Employee("Susan Randolph", acc, 1997, 2,13);
+	      
 		emps[0].createNewChecking(10500);
 		emps[0].createNewSavings(1000);
 		emps[0].createNewRetirement(9300);
@@ -27,6 +29,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("See a report of all account balances? (y/n) ");
 		String answer = sc.next();
+		sc.close();
 		if(answer.equalsIgnoreCase("y")){
 			String info = getFormattedAccountInfo();
 			System.out.println(info);
