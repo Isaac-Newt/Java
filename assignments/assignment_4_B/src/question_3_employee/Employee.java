@@ -21,7 +21,12 @@ public class Employee {
 		Account checkingAcct = new CheckingAccount(startAmount);
 		accounts.add(checkingAcct);
 	}
-
+	
+	@Override
+	public String toString() {
+		return this.name;
+	}
+	
 	public void createNewSavings(double startAmount) {
 		Account savingsAcct = new SavingsAccount(startAmount);
 		accounts.add(savingsAcct);
