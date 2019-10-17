@@ -32,7 +32,6 @@ public class Main {
 		System.out.println("C: Make a withdrawal");
 		System.out.print("Select an option (A, B, or C): ");
 		String answer = sc.next();
-		sc.close();
 		
 		if(answer.equalsIgnoreCase("A")) {
 			String info = getFormattedAccountInfo();
@@ -40,6 +39,7 @@ public class Main {
 		}
 		
 		else if (answer.equalsIgnoreCase("B")) {
+			// List the employees and select one
 			for (int i = 0; i < 3; i++) {
 				System.out.println(i + ": " + emps[i].toString());
 			}
@@ -47,16 +47,19 @@ public class Main {
 			System.out.print("Select an employee: ");
 			int employee = sc.nextInt();
 			
+			// List the accounts and select one
+			emps[employee].listAccounts();
+			
 			System.out.print("Select an account: ");
 			int accountType = sc.nextInt();
-			 
 			
+			// Get a deposit amount
 			System.out.print("Deposit amount: ");
 			float depositAmount = sc.nextFloat();
 			
 			// Make a deposit in the selected employee's selected account
 			emps[employee].deposit(accountType, depositAmount);
-			System.out.println("$" + depositAmount + " has been deposited in the " + "" + " of " + emps[employee]);
+			System.out.println("$" + depositAmount + " has been deposited in the " + emps[employee].getAccount(accountType) + " of " + emps[employee]);
 		}			
 		
 		else if (answer.equalsIgnoreCase("C")) {
@@ -78,6 +81,8 @@ public class Main {
 			emps[employee].withdraw(accountType, withdrawAmount);
 			System.out.println("$" + withdrawAmount + " has been withdrawn from the " + "" + " of " + emps[employee]);
 		}
+
+		sc.close();
 	}
 	String getFormattedAccountInfo() {
 		String retVal = "";

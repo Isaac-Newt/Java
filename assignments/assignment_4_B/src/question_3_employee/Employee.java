@@ -22,6 +22,16 @@ public class Employee {
 		accounts.add(checkingAcct);
 	}
 	
+	public void listAccounts() {
+		for (int i = 0; i < 3; i ++) {
+			System.out.println(i + ": " + this.accounts.get(i));
+		}
+	}
+	
+	public String getAccount(int index) {
+		return this.accounts.get(index).getAcctType();
+	}
+	
 	@Override
 	public String toString() {
 		return this.name;
