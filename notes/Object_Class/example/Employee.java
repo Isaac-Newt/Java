@@ -34,10 +34,26 @@ public class Employee {
         this.Name = newName;
     }
     
-    // Override Object Class's toString method
+    // Override Object Class's default methods
     @Override
     public String toString() {
         return this.Name;
+    }
+    
+    @Override
+    public boolean equals(Object emp) {
+        // return boolean variable, default to not equal
+        boolean equals = false;
+        
+        // Takes any object as input, and casts it as an employee object
+        Employee testEmp = (Employee)emp;
+        
+        // Comparison
+        if (this.ID == testEmp.ID && this.Name.equals(testEmp.Name)) {
+            equals = true;
+        }
+        
+        return equals;
     }
     
 }
