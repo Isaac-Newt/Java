@@ -6,6 +6,6 @@ package presentation_exercises;
   Else display “Log in failed because of incorrect information”
  */
 
-public class Ex_5_textfield {
+public class Ex_5_passwordfield {
 
 }
